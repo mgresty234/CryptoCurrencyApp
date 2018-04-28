@@ -1,3 +1,11 @@
+.title {
+    height: 100px;
+    background-color: #E85A4F
+}
+
+
+
+
 #chartContainer {
     height: 370px;
     width: 100%;
