@@ -1,5 +1,18 @@
 window.onload = function () {
 
+    //////////////// Added by Randy ////////////////
+
+    var airbrake = new airbrakeJs.Client({
+        projectId: 182411,
+        projectKey: 'cfd922b7e69bb39091203948e051d800'
+      });
+      airbrake.addFilter(function (notice) {
+        notice.context.environment = 'production';
+        return notice;
+      });
+
+      //////////////////////////////////////////////////
+
     var options = {
         animationEnabled: true,
         title: {
