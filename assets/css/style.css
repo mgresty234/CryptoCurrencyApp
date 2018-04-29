@@ -25,7 +25,6 @@
 
   .social-padding {
     padding: 5px;
-   
   }
 
   .navigation {
@@ -38,6 +37,8 @@
   .city-background {
       width: 100%;
       height: 400px;
+      background-size: cover;
+      background-position: center center;
       
   }
 
@@ -64,6 +65,15 @@
     opacity: 0.8;
   }
 
+  /* the line under pricing */
+  .wpm-border {
+    width: 90px;
+    height: 2px;
+    background: #1CBAC8;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
   /* body */
 
 .container-fluid {
@@ -78,7 +88,6 @@
 
 span {
     margin-left: 35px;
-    
 }
 
 .coin-icon {
