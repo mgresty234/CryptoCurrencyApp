@@ -71,27 +71,30 @@
     padding-right: 0px;
 }
 
-
-.bg-light {
-   
-}
-
-.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show, .nav-link, .navbar-light .navbar-nav .nav-link {
-    
-}
-
-body {
-   
-}
-
-
-
-
 #chartContainer {
     height: 370px;
     width: 100%;
 }
 
+span {
+    margin-left: 35px;
+    
+}
+
+.coin-icon {
+    width: 20px;
+}
+
+.pricing {
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+h5 {
+    text-align: center;
+    
+}
 
 /* Footer */
 .footer {
@@ -99,6 +102,6 @@ body {
     height: 60px;
     background-color: slategray;
     color: white;
-    padding: 15px;
-    font-size: 12px;
+    padding: 18px;
+    font-size: 14px;
 }
