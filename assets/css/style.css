@@ -5,6 +5,7 @@
     height: 400px;
     background-position: center center;
     background-size: cover;
+    margin-bottom: 1rem;
 }
 
 .social-icons {
@@ -37,7 +38,6 @@
   .navigation {
     position: sticky;
     top: 0px;
-    
   }
 
   .quote {
@@ -92,7 +92,7 @@ span {
 
 .pricing {
     margin: auto;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 40px;
 }
 
