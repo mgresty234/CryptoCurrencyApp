@@ -98,7 +98,11 @@ span {
 
 h5 {
     text-align: center;
-    
+}
+
+.data {
+    padding: 10px;
+    border-bottom:1px solid #eff0f1;
 }
 
 /* Footer */

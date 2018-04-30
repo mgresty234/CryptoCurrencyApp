@@ -27,25 +27,25 @@ getBTCPrice().then(()=> {
 	BTCLow = (returnArray[0].RAW.BTC.USD.LOWDAY)
 
 	$(".coins-appear-here").append(
-		"<div><span>" + "<img src = 'assets/imgs/coin-icons/btc.svg' class = 'coin-icon'>" + "&nbsp;" +
+		"<div class = 'data'><span>" + "<img src = 'assets/imgs/coin-icons/btc.svg' class = 'coin-icon'>" + "&nbsp;" +
 		"<strong>Bitcoin</strong></span>" + "<span>Price: &#36;" + BTCPrice + "</span>"
 		+ "<span>Opened Today : &#36;" + BTCOpen + "</span>" 
 		+ "<span>High Today : &#36;" + BTCHigh  + "</span>" 
 		+ "<span>Low Today : &#36;" + BTCLow + "</span></div>" );
 	$(".coins-appear-here").append(
-		"<div><span>" + "<img src = 'assets/imgs/coin-icons/btc.svg' class = 'coin-icon'>" + "&nbsp;" +
+		"<div class = 'data'><span>" + "<img src = 'assets/imgs/coin-icons/btc.svg' class = 'coin-icon'>" + "&nbsp;" +
 		"<strong>Bitcoin</strong></span>" + "<span>Price: &#36;" + BTCPrice + "</span>"
 		+ "<span>Opened Today : &#36;" + BTCOpen + "</span>" 
 		+ "<span>High Today : &#36;" + BTCHigh  + "</span>" 
 		+ "<span>Low Today : &#36;" + BTCLow + "</span></div>" );
 	$(".coins-appear-here").append(
-		"<div><span>" + "<img src = 'assets/imgs/coin-icons/btc.svg' class = 'coin-icon'>" + "&nbsp;" +
+		"<div class = 'data'><span>" + "<img src = 'assets/imgs/coin-icons/btc.svg' class = 'coin-icon'>" + "&nbsp;" +
 		"<strong>Bitcoin</strong></span>" + "<span>Price: &#36;" + BTCPrice + "</span>"
 		+ "<span>Opened Today : &#36;" + BTCOpen + "</span>"
 		+ "<span>High Today : &#36;" + BTCHigh + "</span>" 
 		+ "<span>Low Today : &#36;" + BTCLow + "</span></div>" );
 	$(".coins-appear-here").append(
-		"<div><span>" + "<img src = 'assets/imgs/coin-icons/btc.svg' class = 'coin-icon'>" + "&nbsp;" +
+		"<div class = 'data'><span>" + "<img src = 'assets/imgs/coin-icons/btc.svg' class = 'coin-icon'>" + "&nbsp;" +
 		"<strong>Bitcoin</strong></span>" + "<span>Price: &#36;" + BTCPrice + "</span>"
 		+ "<span>Opened Today : &#36;" + BTCOpen + "</span>" 
 		+ "<span>High Today : &#36;" + BTCHigh  + "</span>" 
