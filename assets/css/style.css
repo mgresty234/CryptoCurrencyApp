@@ -105,6 +105,10 @@ h5 {
     border-bottom:1px solid #eff0f1;
 }
 
+.card {
+    z-index: -1;
+}
+
 /* Footer */
 .footer {
     text-align: center;
