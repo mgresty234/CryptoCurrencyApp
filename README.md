@@ -8,7 +8,7 @@ In this assignment we were assigned teams and had to create a website that inclu
 .
 
 Go ahead! Click on the following link to preview the completed assignment.
-{link goes here}
+https://five3183.github.io/CryptoCurrencyApp/
 
 Built With:  
 HTML  
