@@ -69,16 +69,28 @@ getAllPrices(coinArray).then((newArray) => {
     let i = 0
     coinArray.forEach((c) => {
         let coin = coinArray[i]
-		coinPrice = (returnArray[i][coin].USD.PRICE)
-		coinOpen = (returnArray[i][coin].USD.OPENDAY)
-		coinHigh = (returnArray[i][coin].USD.HIGHDAY)
-		coinLow = (returnArray[i][coin].USD.LOWDAY)
+		price = (returnArray[i][coin].USD.PRICE)
+		cap = (returnArray[i][coin].USD.MKTCAP)
+		open = (returnArray[i][coin].USD.OPENDAY)
+		high = (returnArray[i][coin].USD.HIGHDAY)
+		low = (returnArray[i][coin].USD.LOWDAY)
 
 		console.log(coin + " price " + coinPrice)
 		console.log(coin + " Open " + coinOpen)
 		console.log(coin + " High " + coinHigh)
 		console.log(coin + " Low " + coinLow)
 
+		var tBody = $("tbody")
+		var tRow = $("<tr>")
+
+		coinNme = $("<td>").text(coinNme)
+		coinPrice = $("<td>").text(price)
+		coinCap = $("<td>").text(cap)
+		coinHigh = $("<td>").text(high)
+		coinLow = $("<td>").text(low)
+		
+		tRow.append(coinNme, coinPrice, coinCap, coinHigh, coinLow)
+		tbody.apped(tRow)
         i++
     })
 
