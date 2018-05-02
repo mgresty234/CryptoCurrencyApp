@@ -70,6 +70,9 @@
     margin-bottom: 5px;
 }
 
+.navbar-toggler-icon {
+    margin-left: 0;
+}
   /* body */
 
 .container-fluid {
@@ -109,6 +112,10 @@ h5 {
     z-index: -1;
 }
 
+.panel-body {
+    overflow: auto;
+}
+
 /* Footer */
 .footer {
     text-align: center;
@@ -117,4 +124,26 @@ h5 {
     color: white;
     padding: 18px;
     font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .seperator {
+        display: none;
+    }
+
+    .logo {
+        width: 245px;
+    }
+
+    .quote {
+        width: 58%; 
+        padding: 25px;
+        top: 12%;
+      }
+
+      .tbody {
+        overflow: scroll;
+    }
+
 }
