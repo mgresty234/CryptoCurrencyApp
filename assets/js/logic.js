@@ -29,7 +29,7 @@ const getPrice = (a) => {
                 method: "GET",
             })
             .then((response) => {
-                resolve(response.RAW)
+                resolve(response.DISPLAY)
             })
     })
 }
