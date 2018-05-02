@@ -1,6 +1,6 @@
 
   // Initialize Firebase
-  var config = {
+var config = {
     apiKey: "AIzaSyBIVlp-OxBJFSGzGrl06nSN3Lnt9rzcOZQ",
     authDomain: "firebasics-766e6.firebaseapp.com",
     databaseURL: "https://firebasics-766e6.firebaseio.com",
@@ -8,43 +8,58 @@
     storageBucket: "firebasics-766e6.appspot.com",
     messagingSenderId: "659710084349"
 };
+
 firebase.initializeApp(config);
 
 
 firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            console.log(user);
-            var firebaseUser = firebase.auth().currentUser
-        } else {
-            console.log("notLoggedIn");
-        }
-    })
+    if (user) {
+        console.log(user);
+        var firebaseUser = firebase.auth().currentUser;
+        logOutBtn.classList.remove("hide");
+        singinBtn.classList.add("hide");
+        signUpBtn.classList.add("hide");
+        loginSpot.classList.add("hide");
+        displaySection.classList.remove("hide");
+
+    }
+    else {
+        console.log("NOT LOGGED IN");
+        logOutBtn.classList.add("hide");
+        singinBtn.classList.remove("hide");
+        signUpBtn.classList.remove("hide");
+        loginSpot.classList.remove("hide");
+        displaySection.classList.add("hide");
+
+    }
+});
 
 
-    $("#singinBtn").on("click", function(event) {
-        event.preventDefault();
-        var email = $("#emailAddress").val();
-        var pass = $("#userPW").val();
-        var auth = firebase.auth();
-        var promise = auth.signInWithEmailAndPassword(email, pass);
-        $("#emailAddress").val("");
-        $("#userPW").val("");
+$("#singinBtn").on("click", function(event) {
+    event.preventDefault();
+    var email = $("#emailAddress").val();
+    var pass = $("#userPW").val();
+    var auth = firebase.auth();
+    var promise = auth.signInWithEmailAndPassword(email, pass);
+    $("#emailAddress").val("");
+    $("#userPW").val("");
+});
      
-     });
+$("#signUpBtn").on("click", function(event) {
+    event.preventDefault(); event.preventDefault();
+    var email = $("#emailAddress").val();
+    var pass = $("#userPW").val();
+    var auth = firebase.auth();
+    var promise = auth.createUserWithEmailAndPassword(email, pass);
+    $("#emailAddress").val("");
+    $("#userPW").val("");
+});
      
-     $("#signUpBtn").on("click", function(event) {
-        event.preventDefault(); event.preventDefault();
-        var email = $("#emailAddress").val();
-        var pass = $("#userPW").val();
-        var auth = firebase.auth();
-        var promise = auth.createUserWithEmailAndPassword(email, pass);
-        $("#emailAddress").val("");
-        $("#userPW").val("");
-     });
-     
-     $("#logOutBtn").on("click", function(event) {
-        firebase.auth().signOut();
-     });
+$("#logOutBtn").on("click", function(event) {
+    firebase.auth().signOut();
+});
+
+
     //coin app iterates through an array, executes apis and returns data
 const coinArray = ["BTC", "ETH", "XRP", "BCH", "ADA", "XLM", "NEO", "LTC", "EOS", "XEM"]
 var URL = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=";
@@ -88,18 +103,13 @@ getAllPrices(coinArray).then((newArray) => {
     // this is covered later in course when we hit es6
     returnArray = [...newArray]
         // entire array of complex objects
-    console.log("======= Array of Complex Objects  =======")
-    console.log(returnArray)
-    console.log("Results for 1st item in the array")
+    // console.log("======= Array of Complex Objects  =======")
+    // console.log(returnArray)
+    // console.log("Results for 1st item in the array")
     Price = returnArray[0].BTC.USD.PRICE
     Open = returnArray[0].BTC.USD.OPENDAY
     High = returnArray[0].BTC.USD.HIGHDAY
     Low = returnArray[0].BTC.USD.LOWDAY
-    console.log("Price for coin BTC " + Price)
-    console.log("Opening for coin BTC " + Open)
-    console.log("High for coin BTC " + High)
-    console.log("Low for coin BTC " + Low)
-    console.log("Results for last item in the array")
         // subtract 1 from the length to determine the last item in Array
     let t = coinArray.length - 1
     let coin = coinArray[t]
@@ -107,11 +117,7 @@ getAllPrices(coinArray).then((newArray) => {
     Price = returnArray[t][coin].USD.PRICE
     Open = returnArray[t][coin].USD.OPENDAY
     High = returnArray[t][coin].USD.HIGHDAY
-    Low = returnArray[t][coin].USD.LOWDAY
-    console.log("Price for " + coin + " = " + Price)
-    console.log("Opening for " + coin + " = " + Open)
-    console.log("High for " + coin + " = " + High)
-    console.log("Low for " + coin + " = " + Low)
+    Low = returnArray[t][coin].USD.LOWDAY    
         // can also build a for loop and iterate through returnArray logging all values  
     let i = 0
     coinArray.forEach((c) => {
@@ -123,10 +129,10 @@ getAllPrices(coinArray).then((newArray) => {
         low = (returnArray[i][coin].USD.LOWDAY)
         coinNme = coin
 
-        console.log(coin + " price " + price)
-        console.log(coin + " Open " + open)
-        console.log(coin + " High " + high)
-        console.log(coin + " Low " + low)
+        // console.log(coin + " price " + price)
+        // console.log(coin + " Open " + open)
+        // console.log(coin + " High " + high)
+        // console.log(coin + " Low " + low)
 
         let tBody = $("tbody")
         let tRow = $("<tr>")
