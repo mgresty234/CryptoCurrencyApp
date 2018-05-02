@@ -154,8 +154,11 @@ h5 {
 
     .pricing {
         padding-bottom: 0px;
-        background-color: white;
     }
+
+    .navigation {
+        position: static;
+      }
 
     .card {
         z-index: 1;
