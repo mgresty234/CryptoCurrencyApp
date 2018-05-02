@@ -1,4 +1,51 @@
-//coin app iterates through an array, executes apis and returns data
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBIVlp-OxBJFSGzGrl06nSN3Lnt9rzcOZQ",
+    authDomain: "firebasics-766e6.firebaseapp.com",
+    databaseURL: "https://firebasics-766e6.firebaseio.com",
+    projectId: "firebasics-766e6",
+    storageBucket: "firebasics-766e6.appspot.com",
+    messagingSenderId: "659710084349"
+};
+firebase.initializeApp(config);
+
+
+firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            console.log(user);
+            var firebaseUser = firebase.auth().currentUser
+        } else {
+            console.log("notLoggedIn");
+        }
+    })
+
+
+    $("#singinBtn").on("click", function(event) {
+        event.preventDefault();
+        var email = $("#emailAddress").val();
+        var pass = $("#userPW").val();
+        var auth = firebase.auth();
+        var promise = auth.signInWithEmailAndPassword(email, pass);
+        $("#emailAddress").val("");
+        $("#userPW").val("");
+     
+     });
+     
+     $("#signUpBtn").on("click", function(event) {
+        event.preventDefault(); event.preventDefault();
+        var email = $("#emailAddress").val();
+        var pass = $("#userPW").val();
+        var auth = firebase.auth();
+        var promise = auth.createUserWithEmailAndPassword(email, pass);
+        $("#emailAddress").val("");
+        $("#userPW").val("");
+     });
+     
+     $("#logOutBtn").on("click", function(event) {
+        firebase.auth().signOut();
+     });
+    //coin app iterates through an array, executes apis and returns data
 const coinArray = ["BTC", "ETH", "XRP", "BCH", "ADA", "XLM", "NEO", "LTC", "EOS", "XEM"]
 var URL = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=";
 var currency = "&tsyms=USD"
@@ -69,29 +116,29 @@ getAllPrices(coinArray).then((newArray) => {
     let i = 0
     coinArray.forEach((c) => {
         let coin = coinArray[i]
-		price = (returnArray[i][coin].USD.PRICE)
-		cap = (returnArray[i][coin].USD.MKTCAP)
-		open = (returnArray[i][coin].USD.OPENDAY)
-		high = (returnArray[i][coin].USD.HIGHDAY)
-		low = (returnArray[i][coin].USD.LOWDAY)
-		coinNme = coin
+        price = (returnArray[i][coin].USD.PRICE)
+        cap = (returnArray[i][coin].USD.MKTCAP)
+        open = (returnArray[i][coin].USD.OPENDAY)
+        high = (returnArray[i][coin].USD.HIGHDAY)
+        low = (returnArray[i][coin].USD.LOWDAY)
+        coinNme = coin
 
-		console.log(coin + " price " + price)
-		console.log(coin + " Open " + open)
-		console.log(coin + " High " + high)
-		console.log(coin + " Low " + low)
+        console.log(coin + " price " + price)
+        console.log(coin + " Open " + open)
+        console.log(coin + " High " + high)
+        console.log(coin + " Low " + low)
 
-		let tBody = $("tbody")
-		let tRow = $("<tr>")
+        let tBody = $("tbody")
+        let tRow = $("<tr>")
 
-		coinNme = $("<td>").text(coinNme)
-		coinPrice = $("<td>").text(price)
-		coinCap = $("<td>").text(cap)
-		coinHigh = $("<td>").text(high)
-		coinLow = $("<td>").text(low)
+        coinNme = $("<td>").text(coinNme)
+        coinPrice = $("<td>").text(price)
+        coinCap = $("<td>").text(cap)
+        coinHigh = $("<td>").text(high)
+        coinLow = $("<td>").text(low)
 
-		tRow.append(coinNme, coinPrice, coinCap, coinHigh, coinLow)
-		tBody.append(tRow)
+        tRow.append(coinNme, coinPrice, coinCap, coinHigh, coinLow)
+        tBody.append(tRow)
         i++
     })
 
