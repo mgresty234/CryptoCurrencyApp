@@ -1,5 +1,13 @@
 /* Top Portion */
+.hide {
+    display: none;
+}
 
+#logOutBtn {
+    position: absolute;
+    right: 10px;
+    top: 160px;
+}
 .jumbotron {
     background-image: url("../imgs/bg1.jpg");
     height: 450px;
