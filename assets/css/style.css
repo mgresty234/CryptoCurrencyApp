@@ -112,8 +112,9 @@ h5 {
     z-index: -1;
 }
 
-.panel-body {
+.card-body {
     overflow: auto;
+
 }
 
 /* Footer */
@@ -125,6 +126,11 @@ h5 {
     padding: 18px;
     font-size: 14px;
 }
+
+/* @media only screen and (min-height: 100px){
+    position: sticky;
+    top: 0px;
+} */
 
 @media only screen and (max-width: 600px) {
 
@@ -145,5 +151,14 @@ h5 {
       .tbody {
         overflow: scroll;
     }
+
+    .pricing {
+        padding-bottom: 0px;
+        background-color: white;
+    }
+
+    .card {
+        z-index: 1;
+}
 
 }
