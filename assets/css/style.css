@@ -10,7 +10,7 @@
 }
 .jumbotron {
     background-image: url("../imgs/bg1.jpg");
-    height: 400px;
+    height: 450px;
     background-position: center center;
     background-size: cover;
     margin-bottom: 1rem;
@@ -51,12 +51,12 @@
   .quote {
     font-size: 1rem;
     text-align: center;
-    position: absolute;
+    /* position: absolute; */
     background-color: white !important; 
     width: 50%; 
     padding: 25px;
     padding-bottom: 25px;
-    top: 30%;
+    top: 50%;
     left: 25%;
     margin: auto;
     opacity: 0.8;
@@ -135,11 +135,6 @@ h5 {
     font-size: 14px;
 }
 
-/* @media only screen and (min-height: 100px){
-    position: sticky;
-    top: 0px;
-} */
-
 @media only screen and (max-width: 600px) {
 
     .seperator {
@@ -171,5 +166,12 @@ h5 {
     .card {
         z-index: 1;
 }
+
+}
+
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 9rem 2rem;
+    }
 
 }

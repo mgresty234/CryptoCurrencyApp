@@ -4,7 +4,7 @@
 
 This is the eigth assignment for the UNCC Coding Bootcamp in Charlotte, NC.
 
-In this assignment we were assigned teams and had to create a website that included the following: 
+In this assignment we were assigned teams and had to create a website that include the following: 
 
 -Must use at least 2 APIs <br/>
 -Must utilize at least one new library or technology that we havent' discussed <br/>
