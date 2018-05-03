@@ -17,28 +17,28 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log(user);
         var firebaseUser = firebase.auth().currentUser;
         logOutBtn.classList.remove("hide");
-        dividerSection.classList.remove("hide")
-        singinBtn.classList.add("hide");
+        signInBtn.classList.add("hide");
         signUpBtn.classList.add("hide");
+        callLogIn.classList.add("hide")
         loginSpot.classList.add("hide");
-        // displaySection.classList.remove("hide");
 
     }
     else {
         console.log("NOT LOGGED IN");
         logOutBtn.classList.add("hide");
-        dividerSection.classList.add("hide")
-        singinBtn.classList.remove("hide");
-        signUpBtn.classList.remove("hide");
-        loginSpot.classList.remove("hide");
-        // displaySection.classList.add("hide");
+        callLogIn.classList.remove("hide")
 
     }
 });
+$("#callLogIn").on("click", function(event) {
+    loginSpot.classList.remove("hide");
+    signUpBtn.classList.remove("hide");
+    signInBtn.classList.remove("hide");
+});
 
-
-$("#singinBtn").on("click", function(event) {
+$("#signInBtn").on("click", function(event) {
     event.preventDefault();
+    console.log("click")
     var email = $("#emailAddress").val();
     var pass = $("#userPW").val();
     var auth = firebase.auth();
@@ -188,24 +188,9 @@ getAllPrices(coinArray).then((newArray) => {
 
         imageArray = [btcImage, ethImage, xrpImage, bchImage, adaImage, xlmImage, neoImage, ltcImage, eosImage, xemImage]
 
-  
-        tRow.append(imageArray[i],coinNme, coinPrice, coinCap, coinHigh, coinLow)
+        coinNme.prepend(imageArray[i],"  ")
+        tRow.append(coinNme, coinPrice, coinCap, coinHigh, coinLow)
         tBody.append(tRow)
         i++
-    })
-
+    })  
 })
-
-
-// const coinArray = ["BTC", "ETH", "XRP", "BCH", "ADA", "XLM", "NEO", "LTC", "EOS", "XEM"]
-
-// let btcImage = "scr = 'assets/imgs/icons/btc.png'"
-// let ethImage = "scr = 'assets/imgs/icons/eth.png'"
-// let xrpImage = "scr = 'assets/imgs/icons/xrp.png'"
-// let bchImage = "scr = 'assets/imgs/icons/bch.jpg'"
-// let adaImage = "scr = 'assets/imgs/icons/ada.png'"
-// let xlmImage = "scr = 'assets/imgs/icons/xlm.png'"
-// let neoImage = "scr = 'assets/imgs/icons/neo.jpg'"
-// let ltcImage = "scr = 'assets/imgs/icons/ltc.png'"
-// let eosImage = "scr = 'assets/imgs/icons/eos.png'"
-// let xemImage = "scr = 'assets/imgs/icons/xem.png'"

@@ -73,11 +73,35 @@
               <li class="nav-item">
                 <a class="nav-link btn btn-default hide" id = "logOutBtn" href="#">Log Out</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-default hide" id = "callLogIn" href="#">Log In</a>
+              </li>
             </ul>
         </div>
     </nav>
   </div>
-
+    <!-- Firebase Login -->
+    <br>
+    <div class = "container">
+      <div id = "loginSpot" class = "hide">
+        <form>
+          <div class="form-group">
+            <p>Login to save your favorite cryptocurrencies.</p>
+            <label for="exampleInputEmail1">Email Address:</label>
+            <input type="email" class="form-control" id="emailAddress" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password:</label>
+            <input type="password" class="form-control" id="userPW" placeholder="Password">
+          </div>
+      </div>
+            <button type="button" class="btn btn-default hide" id = "signInBtn">Sign In</button>
+            <button type="button" class="btn btn-default hide" id = "signUpBtn">Sign Up</button>
+        </form>  
+      </div>
+    </div>
+    <br>
+  
   <!-- Bootstrap Jumbotron with Scrolling Quotes -->
   <div class="jumbotron jumbotron-fluid image-quote">
     <div class="container container-flex">
@@ -96,10 +120,10 @@
       </div>
     </div>
   </div>
-  <!-- Firebase Login -->
+  <!-- Firebase Login
   <br>
   <div class = "container">
-    <div id = "loginSpot">
+    <div id = "loginSpot" class = "hide">
       <form>
         <div class="form-group">
           <p>Login to save your favorite cryptocurrencies.</p>
@@ -111,13 +135,13 @@
           <input type="password" class="form-control" id="userPW" placeholder="Password">
         </div>
     </div>
-          <button type="button" class="btn btn-default" id = "singinBtn">Log In</button>
-          <button type="button" class="btn btn-default" id = "signUpBtn">Sign Up</button>
-          <!-- <button type="button" class="btn btn-default hide" id = "logOutBtn">Log Out</button> -->
+          <button type="button" class="btn btn-default hide" id = "signInBtn">Sign In</button>
+          <button type="button" class="btn btn-default hide" id = "signUpBtn">Sign Up</button>
       </form>  
     </div>
+  </div>
     <br>
-
+ -->
   <!-- Crypt Currency Pricing Container -->
   <div class = "container pricing">
     <div class="card">
@@ -130,10 +154,11 @@
             <thead>
               <tr>
                 <th scope="col">Symbol</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Market Cap</th>
-                  <th scope="col">High Today</th>
-                  <th scope="col">Low Today</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Price</th>
+                <th scope="col">Market Cap</th>
+                <th scope="col">High Today</th>
+                <th scope="col">Low Today</th>
               </tr>
             </thead>
             <tbody>
