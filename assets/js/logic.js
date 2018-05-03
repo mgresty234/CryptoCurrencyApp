@@ -8,7 +8,7 @@
     storageBucket: "firebasics-766e6.appspot.com",
     messagingSenderId: "659710084349"
 };
-
+// updated version.
 firebase.initializeApp(config);
 
 
