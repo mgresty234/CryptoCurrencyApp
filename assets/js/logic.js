@@ -21,7 +21,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         singinBtn.classList.add("hide");
         signUpBtn.classList.add("hide");
         loginSpot.classList.add("hide");
-        displaySection.classList.remove("hide");
+        // displaySection.classList.remove("hide");
 
     }
     else {
@@ -31,7 +31,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         singinBtn.classList.remove("hide");
         signUpBtn.classList.remove("hide");
         loginSpot.classList.remove("hide");
-        displaySection.classList.add("hide");
+        // displaySection.classList.add("hide");
 
     }
 });
@@ -145,20 +145,51 @@ getAllPrices(coinArray).then((newArray) => {
         coinHigh = $("<td>").text(high)
         coinLow = $("<td>").text(low)
 
+
         let btcImage = $("<img src='assets/imgs/icons/btc.png'>")
         btcImage.attr("height", "20")
         btcImage.attr("width", "20")
-        let ethImage = $("<img src='assets/imgs/icons/eth.png'>")
-        let xrpImage = $("<img src = 'assets/imgs/icons/xrp.png'>")
-        let bchImage = $("<img src = 'assets/imgs/icons/bch.jpg'>")
-        let adaImage = $("<img src = 'assets/imgs/icons/ada.png'>")
-        let xlmImage = $("<img src = 'assets/imgs/icons/xlm.png'>")
-        let neoImage = $("<img src = 'assets/imgs/icons/neo.jpg'>")
-        let ltcImage = $("<img src = 'assets/imgs/icons/ltc.png'>")
-        let eosImage = $("<img src = 'assets/imgs/icons/eos.png'>")
-        let xemImage = $("<img src = 'assets/imgs/icons/xem.png'>")
 
-        tRow.append(btcImage, coinNme, coinPrice, coinCap, coinHigh, coinLow)
+        let ethImage = $("<img src='assets/imgs/icons/eth.png'>")
+        ethImage.attr("height", "20")
+        ethImage.attr("width", "20")
+
+        let xrpImage = $("<img src = 'assets/imgs/icons/xrp.png'>")
+        xrpImage.attr("height", "20")
+        xrpImage.attr("width", "20")
+
+        let bchImage = $("<img src = 'assets/imgs/icons/bch.jpg'>")
+        bchImage.attr("height", "20")
+        bchImage.attr("width", "20")
+
+        let adaImage = $("<img src = 'assets/imgs/icons/ada.png'>")
+        adaImage.attr("height", "20")
+        adaImage.attr("width", "20")
+
+        let xlmImage = $("<img src = 'assets/imgs/icons/xlm.png'>")
+        xlmImage.attr("height", "20")
+        xlmImage.attr("width", "20")
+
+        let neoImage = $("<img src = 'assets/imgs/icons/neo.jpg'>")
+        neoImage.attr("height", "20")
+        neoImage.attr("width", "20")
+
+        let ltcImage = $("<img src = 'assets/imgs/icons/ltc.png'>")
+        ltcImage.attr("height", "20")
+        ltcImage.attr("width", "20")
+
+        let eosImage = $("<img src = 'assets/imgs/icons/eos.png'>")
+        eosImage.attr("height", "20")
+        eosImage.attr("width", "20")
+
+        let xemImage = $("<img src = 'assets/imgs/icons/xem.png'>")
+        xemImage.attr("height", "20")
+        xemImage.attr("width", "20")
+
+        imageArray = [btcImage, ethImage, xrpImage, bchImage, adaImage, xlmImage, neoImage, ltcImage, eosImage, xemImage]
+
+  
+        tRow.append(imageArray[i],coinNme, coinPrice, coinCap, coinHigh, coinLow)
         tBody.append(tRow)
         i++
     })
