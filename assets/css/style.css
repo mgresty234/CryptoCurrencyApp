@@ -117,7 +117,10 @@ h5 {
 
 .card-body {
     overflow: auto;
+}
 
+.strong-question{
+    font-weight: bold;
 }
 
 /* Footer */
