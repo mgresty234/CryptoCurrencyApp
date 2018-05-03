@@ -46,13 +46,13 @@
         <!-- Navigtion Links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="https://five3183.github.io/CryptoCurrencyApp/">Home</a>
               </li>
               <li class="divider">
                 <a class="nav-link separator">|</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" href="https://five3183.github.io/CryptoCurrencyApp/About.html">About</a>
               </li>
               <li class="divider">
@@ -96,68 +96,44 @@
       </div>
     </div>
   </div>
-  <!-- Firebase Login -->
-  <br>
-  <div class = "container">
-    <div id = "loginSpot">
-      <form>
-        <div class="form-group">
-          <p>Login to save your favorite cryptocurrencies.</p>
-          <label for="exampleInputEmail1">Email Address:</label>
-          <input type="email" class="form-control" id="emailAddress" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password:</label>
-          <input type="password" class="form-control" id="userPW" placeholder="Password">
-        </div>
+    <div class = "dollar-image-div">
+      <img src = "assets/imgs/dollarsigns.jpg" class = "dollar-image">
     </div>
-          <button type="button" class="btn btn-default" id = "singinBtn">Log In</button>
-          <button type="button" class="btn btn-default" id = "signUpBtn">Sign Up</button>
-          <!-- <button type="button" class="btn btn-default hide" id = "logOutBtn">Log Out</button> -->
-      </form>  
-    </div>
-    <br>
-
-  <!-- Crypt Currency Pricing Container -->
+  <!-- Crypt Currency FAQ Container -->
   <div class = "container pricing">
     <div class="card">
       <div class="card-header">
-        <h5>PRICING</h5>
-        <div class = "wpm-border"></div>
-      </div>
-        <div class="card-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Symbol</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Market Cap</th>
-                  <th scope="col">High Today</th>
-                  <th scope="col">Low Today</th>
-              </tr>
-            </thead>
-            <tbody>
-            <!-- Insert crypto currency rows here -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>  
-  </div>
-
-  <!-- Crypto Currency News Container - from RSS -->
-  <div class = "container pricing">
-    <div class="card">
-      <div class="card-header">
-        <h5>CRYPTO CURRENCY NEWS</h5>
+        <h5>About</h5>
         <div class = "wpm-border"></div>
       </div>
       <div class="card-body">
-        <iframe src="https://feed.mikle.com/widget/v2/77295/" height="452px" width="100%" class="fw-iframe" scrolling="no" frameborder="0"></iframe>
+        <p>So you're wondering what the Crypto Cronnies page is all about? Well, it's a place where you can view
+            the hottest crypto currencies in the market right now. You have access to the Symbol, Price, Market Cap, High Today, and Low Today.
+        </p>
+        <p>So why the login you ask? The login page allows you to save your favorite cryptocurrencies so you can 
+          come back, visit our website, and have access to your saved favorites.
+        </p>
+        <p>If you're a little lost on what cryptocurrencies are, you can watch the video below and then head on over to
+          the FAQ page for a few answers.
+        </p>
+        </div>
       </div>
     </div>  
   </div>
-  <!-- <div class="chart-container"></div> -->
+
+  <div class = "container video">
+    <div class="card video">
+      <div class="card-header">
+          <h5>Cryptocurrency Video</h5>
+          <div class = "wpm-border"></div>
+          </div>
+          <div class="card-body">
+            <div class="video-container">
+              <iframe width="660" height="415" src="https://www.youtube.com/embed/kubGCSj5y3k?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+        </div>
+      </div>
+    </div>  
+  </div>
 
   <div class = "footer container-fluid">
       &copy; 2018 | Crypto Cronies | Created using HTML, CSS, Bootstrap, JS, JQuery, Firebase
