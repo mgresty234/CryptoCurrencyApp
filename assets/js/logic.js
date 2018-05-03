@@ -1,6 +1,6 @@
 
   // Initialize Firebase
-var config = {
+  var config = {
     apiKey: "AIzaSyBIVlp-OxBJFSGzGrl06nSN3Lnt9rzcOZQ",
     authDomain: "firebasics-766e6.firebaseapp.com",
     databaseURL: "https://firebasics-766e6.firebaseio.com",
@@ -178,4 +178,3 @@ getAllPrices(coinArray).then((newArray) => {
 // let ltcImage = "scr = 'assets/imgs/icons/ltc.png'"
 // let eosImage = "scr = 'assets/imgs/icons/eos.png'"
 // let xemImage = "scr = 'assets/imgs/icons/xem.png'"
-
