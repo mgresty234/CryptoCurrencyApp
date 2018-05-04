@@ -1,3 +1,4 @@
+var coinChart = require("chart")
 
   // Initialize Firebase
   var config = {
@@ -117,10 +118,7 @@ getAllPrices(coinArray).then((newArray) => {
     // using spread operator to copy the array -- because these are complex objects
     // this is covered later in course when we hit es6
     returnArray = [...newArray]
-        // entire array of complex objects
-    // console.log("======= Array of Complex Objects  =======")
-    // console.log(returnArray)
-    // console.log("Results for 1st item in the array")
+    
     Price = returnArray[0].BTC.USD.PRICE
     Open = returnArray[0].BTC.USD.OPENDAY
     High = returnArray[0].BTC.USD.HIGHDAY
@@ -159,11 +157,13 @@ getAllPrices(coinArray).then((newArray) => {
         coinLow = $("<td>").text(low)
         coinChart = $("<td>").attr('id', coinNme + '-chart')
 
+        coinChart.attr("class","chartImage")
+
         star = $("<img src = 'assets/imgs/icons/non.png'>")
-        star.
+        // star.classList.add()
 
         coinNme.prepend(imageArray[i],"  ")
-        tRow.append(star, coinNme, coinPrice, coinCap, coinHigh, coinLow)
+        tRow.append(star, coinNme, coinPrice, coinCap, coinHigh, coinLow, coinChart)
         tBody.append(tRow)
         i++
     })  
