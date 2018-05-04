@@ -62,7 +62,7 @@ $("#logOutBtn").on("click", function(event) {
 });
 
 
-    //coin app iterates through an array, executes apis and returns data
+//coin app iterates through an array, executes apis and returns data
 const coinArray = ["BTC", "ETH", "XRP", "BCH", "ADA", "XLM", "NEO", "LTC", "EOS", "XEM"]
 var URL = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=";
 var currency = "&tsyms=USD"
@@ -144,24 +144,36 @@ getAllPrices(coinArray).then((newArray) => {
         coinCap = $("<td>").text(cap)
         coinHigh = $("<td>").text(high)
         coinLow = $("<td>").text(low)
+        coinChart = $("<td>").attr('id', coinNme + '-chart')
 
-
-        let btcImage = $("<img src='assets/imgs/icons/btc.png'  class = 'coin-image'>")
-        let ethImage = $("<img src='assets/imgs/icons/eth.png'  class = 'coin-image'>")
-        let xrpImage = $("<img src = 'assets/imgs/icons/xrp.png'  class = 'coin-image'>")
-        let bchImage = $("<img src = 'assets/imgs/icons/bch.jpg'  class = 'coin-image'>")
-        let adaImage = $("<img src = 'assets/imgs/icons/ada.png'  class = 'coin-image'>")
-        let xlmImage = $("<img src = 'assets/imgs/icons/xlm.png'  class = 'coin-image'>")
-        let neoImage = $("<img src = 'assets/imgs/icons/neo.jpg' class = 'coin-image'>")
-        let ltcImage = $("<img src = 'assets/imgs/icons/ltc.png' class = 'coin-image'>")
-        let eosImage = $("<img src = 'assets/imgs/icons/eos.png' class = 'coin-image'>")
-        let xemImage = $("<img src = 'assets/imgs/icons/xem.png' class = 'coin-image'>")
-
-        imageArray = [btcImage, ethImage, xrpImage, bchImage, adaImage, xlmImage, neoImage, ltcImage, eosImage, xemImage]
+        star = $("<img src = 'assets/imgs/icons/non.png'>")
 
         coinNme.prepend(imageArray[i],"  ")
-        tRow.append(coinNme, coinPrice, coinCap, coinHigh, coinLow)
+        tRow.append(star, coinNme, coinPrice, coinCap, coinHigh, coinLow)
         tBody.append(tRow)
         i++
     })  
 })
+
+// function pushCoin() {
+//     $(".item").on("click", function(event) {
+//         $("#stage").append(this);
+//         guess = $(this).data("item")
+//         console.log(guess)
+//         gameRef.push().set({
+//             email: email, 
+//             guess: guess
+//         })
+//     })
+// }
+
+// gameRef.on("child_added", function(snapshot) {
+//     email = firebase.auth().currentUser.email;
+//     var guess = snapshot.val();
+//     userGuess = {
+//         guess: guess.guess,
+//         email: guess.email
+//     }
+//     $("#battleStage").append("<p>" + guess.email + ": " + guess.guess + "<p>");
+//     checkItem();
+// })
