@@ -11,6 +11,14 @@
     margin-bottom: 1rem;
 }
 
+.jumbotron-other-pages {
+    background-image: url("../imgs/bg1.jpg");
+    height: 300px;
+    background-position: center bottom;
+    background-size: cover;
+    margin-bottom: 1rem;
+}
+
 .social-icons {
     height: 40px;
     background-color: #1cbac8;
@@ -94,6 +102,11 @@ span {
 
 .coin-icon {
     width: 20px;
+}
+
+.coin-image {
+    width: 20px;
+    height: 20px;
 }
 
 .pricing {

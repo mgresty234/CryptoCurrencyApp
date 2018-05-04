@@ -31,10 +31,10 @@
   <div class = "container-fluid social-icons">
     <!--Social Icons -->
     <div class = "social-padding">
-      <a href="https://www.facebook.com/search/top/?q=cryptocurrency"><i class="fab fa-facebook-f circle"></i></a>
-      <a href="https://twitter.com/search?q=cryptocurrency&src=typd"><i class="fab fa-twitter circle"></i></a>
-      <a href="https://www.youtube.com/results?search_query=cryptocurrency"><i class="fab fa-youtube circle"></i></a>
-    </div>
+        <a href="https://www.facebook.com/search/top/?q=cryptocurrency"><i class="fab fa-facebook-f circle"></i></a>
+        <a href="https://twitter.com/search?q=cryptocurrency&src=typd"><i class="fab fa-twitter circle"></i></a>
+        <a href="https://www.youtube.com/results?search_query=cryptocurrency"><i class="fab fa-youtube circle"></i></a>
+      </div>
   </div>
 
   <div class = "container-fluid navigation">
@@ -77,11 +77,33 @@
               <li class="nav-item">
                 <a class="nav-link btn btn-default hide" id = "logOutBtn" href="#">Log Out</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-default hide" id = "callLogIn" href="#">Log In</a>
+              </li>
             </ul>
         </div>
     </nav>
   </div>
-
+    <!-- Firebase Login -->
+    <div class = "container">
+      <div id = "loginSpot" class = "hide">
+        <br>
+        <form>
+          <div class="form-group">
+            <p>Login to save your favorite cryptocurrencies.</p>
+            <label for="exampleInputEmail1">Email Address:</label>
+            <input type="email" class="form-control" id="emailAddress" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password:</label>
+            <input type="password" class="form-control" id="userPW" placeholder="Password">
+          </div>
+      </div>
+            <button type="button" class="btn btn-default hide" id = "signInBtn">Sign In</button>
+            <button type="button" class="btn btn-default hide" id = "signUpBtn">Sign Up</button>
+        </form>  
+      </div>
+    </div>  
   <!-- Bootstrap Jumbotron with Scrolling Quotes -->
   <div class="jumbotron jumbotron-fluid image-quote">
     <div class="container container-flex">
@@ -100,27 +122,34 @@
       </div>
     </div>
   </div>
-  <!-- Firebase Login -->
-  <br>
-  <div class = "container">
-    <div id = "loginSpot">
-      <form>
-        <div class="form-group">
-          <p>Login to save your favorite cryptocurrencies.</p>
-          <label for="exampleInputEmail1">Email Address:</label>
-          <input type="email" class="form-control" id="emailAddress" placeholder="Email">
+
+  <!--Favorites Container -->
+  <div class = "container favorite">
+    <div class="card">
+      <div class="card-header">
+        <h5>FAVORITES</h5>
+        <div class = "wpm-border"></div>
+      </div>
+        <div class="card-body">
+          <table class="table" id = "coin-favorites">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Price</th>
+                <th scope="col">Market Cap</th>
+                <th scope="col">High Today</th>
+                <th scope="col">Low Today</th>
+              </tr>
+            </thead>
+            <tbody>
+            <!-- Insert crypto currency favorite rows here -->
+            </tbody>
+          </table>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password:</label>
-          <input type="password" class="form-control" id="userPW" placeholder="Password">
-        </div>
-    </div>
-          <button type="button" class="btn btn-default" id = "singinBtn">Log In</button>
-          <button type="button" class="btn btn-default" id = "signUpBtn">Sign Up</button>
-          <!-- <button type="button" class="btn btn-default hide" id = "logOutBtn">Log Out</button> -->
-      </form>  
-    </div>
-    <br>
+      </div>
+    </div>  
+  </div>
 
   <!-- Crypt Currency Pricing Container -->
   <div class = "container pricing">
@@ -133,11 +162,12 @@
           <table class="table">
             <thead>
               <tr>
+                <th scope="col"></th>
                 <th scope="col">Symbol</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Market Cap</th>
-                  <th scope="col">High Today</th>
-                  <th scope="col">Low Today</th>
+                <th scope="col">Price</th>
+                <th scope="col">Market Cap</th>
+                <th scope="col">High Today</th>
+                <th scope="col">Low Today</th>
               </tr>
             </thead>
             <tbody>
