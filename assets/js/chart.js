@@ -130,4 +130,4 @@
 
 
 }
-module.exports = coinChart;
+export default coinChart;
