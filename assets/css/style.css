@@ -104,6 +104,11 @@ span {
     width: 20px;
 }
 
+.coin-image {
+    width: 20px;
+    height: 20px;
+}
+
 .pricing {
     margin: auto;
     padding-top: 20px;
