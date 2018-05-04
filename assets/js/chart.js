@@ -1,4 +1,4 @@
-window.onload = function () {
+ function coinChart() {
 
 
     const getAllPrices = async (coinArray) => {
@@ -130,3 +130,4 @@ window.onload = function () {
 
 
 }
+module.exports = coinChart;
