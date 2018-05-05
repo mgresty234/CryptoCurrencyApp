@@ -205,11 +205,8 @@ $.ajax({
  newsArray.push(result.response.docs);
  for (z = 0; z < newsArray[0].length; z++){
      headline = newsArray[0][z].headline.main
-     console.log(headline)
      urlDisplay = newsArray[0][z].web_url
-     console.log(urlDisplay)
      summary = newsArray[0][z].snippet
-     console.log(summary)
 
 
      var articleList = $("<ul>")
@@ -217,9 +214,9 @@ $.ajax({
      titleDisplay = $()
 
     newsSection = $(".newsDivider")
-    newsSection.append("<h3>" + headline + "<h3>")
+    newsSection.append("<h4>" + headline + "<h4>")
     newsSection.append("<p>" + summary + "<p>")
-    newsSection.append("<a>" + urlDisplay + "<a>")
+    newsSection.append("<a href=" + urlDisplay + " " + "target='_blank'" + ">" + "Full Article Here" + "<a>")
  }
 
 }).fail(function(err) {
