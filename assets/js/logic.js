@@ -22,6 +22,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         signUpBtn.classList.add("hide")
         callLogIn.classList.add("hide")
         loginSpot.classList.add("hide")
+        favSection.classList.remove("hide")
+
         clickMe()
 
     }
@@ -29,6 +31,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log("NOT LOGGED IN")
         logOutBtn.classList.add("hide")
         callLogIn.classList.remove("hide")
+        favSection.classList.add("hide")
         // star.classList.add("hide")
 
     }
