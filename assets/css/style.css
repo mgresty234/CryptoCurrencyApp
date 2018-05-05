@@ -193,12 +193,9 @@ article {
     height: 250px;
   }
 
-  .news-link {
-      margin-bottom: 15px;
-  }
-
   .divider2 {
     border-bottom: 1px solid slategray;
+    margin-bottom: 40px;
   }
 
 /* Footer */
