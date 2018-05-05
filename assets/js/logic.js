@@ -191,15 +191,37 @@ getAllPrices(coinArray).then((newArray) => {
 
 
 // NYT NEWS Call
-var url = 'https://newsapi.org/v2/everything?' +
-          'q=cryptocurrency&' +            
-          'pageSize=10&' +
-          'sortBy=popularity&' +
-          'apiKey=1bb206c04e3145bf95c91c4863b50374';
+newsArray = []
 
-var req = new Request(url);
+var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+url += '?' + $.param({
+ 'api-key': "4e6a18908e354053b2e7120e5811b61a",
+ 'q': "cryptocurrency"
+});
+$.ajax({
+ url: url,
+ method: 'GET',
+}).done(function(result) {
+ newsArray.push(result.response.docs);
+ for (z = 0; z < newsArray[0].length; z++){
+     headline = newsArray[0][z].headline.main
+     console.log(headline)
+     urlDisplay = newsArray[0][z].web_url
+     console.log(urlDisplay)
+     summary = newsArray[0][z].snippet
+     console.log(summary)
 
-fetch(req)
-    .then(function(response) {
-        console.log(response.json());
-    })
+
+     var articleList = $("<ul>")
+     articleList.addClass("news-group")
+     titleDisplay = $()
+
+    newsSection = $(".newsDivider")
+    newsSection.append("<h3>" + headline + "<h3>")
+    newsSection.append("<p>" + summary + "<p>")
+    newsSection.append("<a>" + urlDisplay + "<a>")
+ }
+
+}).fail(function(err) {
+ throw err;
+});
