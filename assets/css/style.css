@@ -198,6 +198,10 @@ article {
     margin-bottom: 40px;
   }
 
+  .container {
+      margin-bottom: 20px;
+  }
+
 /* Footer */
 .footer {
     text-align: center;
@@ -239,7 +243,17 @@ article {
 
     .card {
         z-index: 1;
-}
+    }
+
+    .card-body {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .footer {
+        padding: 10px;
+    }
+
 
 }
 
