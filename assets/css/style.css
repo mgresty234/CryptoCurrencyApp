@@ -171,14 +171,14 @@ h5 {
     }
 
 article {
-    margin-left: 170px; 
+    /* margin-left: 170px;  */
     padding: 1em;
     overflow: hidden;
     }
 
-.newsDivider {
+/* .newsDivider {
     border-left: 1px solid gray;
-    }
+    } */
     
 .one {
     float: left;
@@ -193,8 +193,12 @@ article {
     height: 250px;
   }
 
-  .fullArticle {
+  .news-link {
       margin-bottom: 15px;
+  }
+
+  .divider2 {
+    border-bottom: 1px solid slategray;
   }
 
 /* Footer */

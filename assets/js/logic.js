@@ -213,8 +213,9 @@ $.ajax({
     newsSection = $(".newsDivider")
     newsSection.append("<h4 class = 'news-headline'>" + headline)
     newsSection.append("<p class = 'full-article'>" + summary)
-    newsSection.append("<a href=" + urlDisplay + " " + "target='_blank'" + " class = 'news-link'>" + "Full Article Here")
- }
+    newsSection.append("<p><a href=" + urlDisplay + " " + "target='_blank'" + " class = 'news-link'>" + "Full Article Here" + "</br>" + "</br>")
+    newsSection.append("<div = class 'divider2'>")
+}
 
 }).fail(function(err) {
  throw err;
