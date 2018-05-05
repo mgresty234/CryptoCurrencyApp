@@ -1,7 +1,7 @@
 // var coinChart = require("chart")
 
 // Initialize Firebase
-  var config = {
+var config = {
     apiKey: "AIzaSyBIVlp-OxBJFSGzGrl06nSN3Lnt9rzcOZQ",
     authDomain: "firebasics-766e6.firebaseapp.com",
     databaseURL: "https://firebasics-766e6.firebaseio.com",
