@@ -1,3 +1,5 @@
+// var coinChart = require("chart")
+
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBIVlp-OxBJFSGzGrl06nSN3Lnt9rzcOZQ",
@@ -13,51 +15,53 @@ firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        console.log(user);
-        var firebaseUser = firebase.auth().currentUser;
-        logOutBtn.classList.remove("hide");
-        signInBtn.classList.add("hide");
-        signUpBtn.classList.add("hide");
+        console.log(user)
+        var firebaseUser = firebase.auth().currentUser
+        logOutBtn.classList.remove("hide")
+        signInBtn.classList.add("hide")
+        signUpBtn.classList.add("hide")
         callLogIn.classList.add("hide")
-        loginSpot.classList.add("hide");
+        loginSpot.classList.add("hide")
+        clickMe()
 
     }
     else {
-        console.log("NOT LOGGED IN");
-        logOutBtn.classList.add("hide");
+        console.log("NOT LOGGED IN")
+        logOutBtn.classList.add("hide")
         callLogIn.classList.remove("hide")
+        // star.classList.add("hide")
 
     }
 });
 $("#callLogIn").on("click", function(event) {
-    loginSpot.classList.remove("hide");
-    signUpBtn.classList.remove("hide");
-    signInBtn.classList.remove("hide");
+    loginSpot.classList.remove("hide")
+    signUpBtn.classList.remove("hide")
+    signInBtn.classList.remove("hide")
 });
 
 $("#signInBtn").on("click", function(event) {
-    event.preventDefault();
+    event.preventDefault()
     console.log("click")
-    var email = $("#emailAddress").val();
-    var pass = $("#userPW").val();
-    var auth = firebase.auth();
-    var promise = auth.signInWithEmailAndPassword(email, pass);
-    $("#emailAddress").val("");
-    $("#userPW").val("");
+    var email = $("#emailAddress").val()
+    var pass = $("#userPW").val()
+    var auth = firebase.auth()
+    var promise = auth.signInWithEmailAndPassword(email, pass)
+    $("#emailAddress").val("")
+    $("#userPW").val("")
 });
      
 $("#signUpBtn").on("click", function(event) {
-    event.preventDefault(); event.preventDefault();
-    var email = $("#emailAddress").val();
-    var pass = $("#userPW").val();
-    var auth = firebase.auth();
-    var promise = auth.createUserWithEmailAndPassword(email, pass);
-    $("#emailAddress").val("");
-    $("#userPW").val("");
+    event.preventDefault(); event.preventDefault()
+    var email = $("#emailAddress").val()
+    var pass = $("#userPW").val()
+    var auth = firebase.auth()
+    var promise = auth.createUserWithEmailAndPassword(email, pass)
+    $("#emailAddress").val("")
+    $("#userPW").val("")
 });
      
 $("#logOutBtn").on("click", function(event) {
-    firebase.auth().signOut();
+    firebase.auth().signOut()
 });
 
 
@@ -117,18 +121,6 @@ getAllPrices(coinArray).then((newArray) => {
     // this is covered later in course when we hit es6
     returnArray = [...newArray]
     
-    Price = returnArray[0].BTC.USD.PRICE
-    Open = returnArray[0].BTC.USD.OPENDAY
-    High = returnArray[0].BTC.USD.HIGHDAY
-    Low = returnArray[0].BTC.USD.LOWDAY
-        // subtract 1 from the length to determine the last item in Array
-    let t = coinArray.length - 1
-    let coin = coinArray[t]
-    console.log(returnArray[t])
-    Price = returnArray[t][coin].USD.PRICE
-    Open = returnArray[t][coin].USD.OPENDAY
-    High = returnArray[t][coin].USD.HIGHDAY
-    Low = returnArray[t][coin].USD.LOWDAY    
         // can also build a for loop and iterate through returnArray logging all values  
     let i = 0
     coinArray.forEach((c) => {
@@ -139,11 +131,6 @@ getAllPrices(coinArray).then((newArray) => {
         high = (returnArray[i][coin].USD.HIGHDAY)
         low = (returnArray[i][coin].USD.LOWDAY)
         coinNme = coin
-
-        // console.log(coin + " price " + price)
-        // console.log(coin + " Open " + open)
-        // console.log(coin + " High " + high)
-        // console.log(coin + " Low " + low)
 
         let tBody = $("tbody")
         let tRow = $("<tr>")
@@ -156,9 +143,20 @@ getAllPrices(coinArray).then((newArray) => {
         coinChart = $("<td>").attr('id', coinNme + '-chart')
 
         coinChart.attr("class","chartImage")
+        
+        let star = $("<img>")
 
-        star = $("<img src = 'assets/imgs/icons/non.png'>")
-        // star.classList.add()
+        fav = star.attr("src", "assets/imgs/icons/fav.png")
+        star.attr("favorite", "fav")
+
+        nonFav = star.attr("src","assets/imgs/icons/non.png")
+        star.attr("nonFavorite", "nonFav")
+
+        star.attr("state", "nonFav")
+
+        star.addClass("favBtn")
+
+        star.attr("data-coin", coinArray[i])
 
         coinNme.prepend(imageArray[i],"  ")
         tRow.append(star, coinNme, coinPrice, coinCap, coinHigh, coinLow, coinChart)
@@ -166,22 +164,22 @@ getAllPrices(coinArray).then((newArray) => {
         i++
 
     })  
+
 })
-
-coinChart()
-
-
-// function pushCoin() {
-//     $(".item").on("click", function(event) {
-//         $("#stage").append(this);
-//         guess = $(this).data("item")
-//         console.log(guess)
-//         gameRef.push().set({
-//             email: email, 
-//             guess: guess
-//         })
+// const favCoins = []
+// // favorite coins
+// function clickMe() {
+//     $("#displayTable").on("click", ".favBtn", function(event) {
+//         let favCoin = $(this).data("coin")
+//         favCoins.push(favCoin)
+//     console.log(favCoins)
 //     })
 // }
+
+
+$(document).ready(function() {
+    getNews()
+});
 
 // gameRef.on("child_added", function(snapshot) {
 //     email = firebase.auth().currentUser.email;
@@ -194,135 +192,24 @@ coinChart()
 //     checkItem();
 // })
 
-function coinChart() {
 
+// NYT NEWS Call
+function getNews () {
+    var newsURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey="
+    var newsApiKey = "1bb206c04e3145bf95c91c4863b50374"
+    var 
 
-    const getAllPrices = async (coinArray) => {
-        const cArray = coinArray.map(async c => {
-            const response = await getPrice(c)
-            return response
-        });
-        const newArray = await Promise.all(cArray);
-        // ... do some stuff
-        return newArray
-    }
+    url2 = 'https://newsapi.org/v2/everything?' +
+            'q=cryptocurrency&' +
+            'pageSize=10&' +
+            'sortBy=popularity&' +
+            'apiKey=1bb206c04e3145bf95c91c4863b50374';
 
-    const getPrice = (a) => {
-        return new Promise((resolve, reject) => {
-            var queryURL = URL + a + limit + currency;
-            console.log(queryURL);
-            $.ajax({
-                url: queryURL,
-                method: "GET",
-            })
-                .then((response) => {
+    var req = new Request(url2);
+    newsArray = []
+    fetch(req)
+        .then(function(response) {
+           console.log(response.json())
 
-                    // loop display chart
-                    // for (let index = 0; index < coinArray.length; index++) {
-                    console.log('response: ', response);
-                    console.log('response: ', response);
-                    displayChart(response.Data);
-                    // }
-                        
-
-                    resolve(response.RAW);
-                })
         })
-    }
-
-    function displayChart(data) {
-        console.log('entire data set: ', data);
-
-        var hoursAxis = [];
-        var prices = [];
-
-        for (var i = 0; i < data.length; i++) {
-            if (i === 0 || i % 4 === 0) {
-                console.log('time: ', data[i].time);
-                var hourDate = new Date(data[i].time * 1000);
-                var options = {
-                    month: 'numeric',
-                    day: 'numeric',
-                    hour: 'numeric',
-                };
-                var displayHour = hourDate.toLocaleDateString('en-EN', options);
-                console.log('hourDate: ', hourDate);
-                console.log('displayHours: ', displayHour);
-
-                prices.push(data[i].open);
-                hoursAxis.push(displayHour);
-            }
-        }
-
-        // make chart id dynamic, based on id
-        // 'BTC-chart'
-        // 'ETH-chart'
-        // ...
-
-        // coinArray[chartCounter] + '-chart'
-        var chartId = coinArray[chartCounter] + '-chart';
-        var ctx = document.getElementById("myChart").getContext('2d');
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'line',
-
-            // The data for our dataset
-            data: {
-                labels: hoursAxis,
-                datasets: [{
-                    label: "Crypto Currency Prices",
-
-                    borderColor: 'blue',
-                    data: prices,
-                }]
-            },
-
-            // Configuration options go here
-            options: {}
-        });
-        console.log('chartCounter', chartCounter);
-        chartCounter++;
-    }
-
-
-    const coinArray = ['BTC', "ETH", "XRP", "BCH", "ADA", "XLM", "NEO", "LTC", "EOS", "XEM"];
-    var chartCounter = 0;
-    var URL = "https://min-api.cryptocompare.com/data/histohour?fsym=";
-    var currency = "&tsym=USD"
-    var limit = "&limit=24"
-    var returnArray = [];
-    let Price
-    let Open
-    let High
-    let Low
-    /* 
-        Async await routine to execute api using ajax for every entry in the
-        coinArray. The array.map function us used to iterate through the coin Array
-        and for every entry ( denoted by c ) it calls getPrice.
-        do the nature of array.map -- the cArray is populated with each Promise
-        for getPrice ... when array.map is completed we execute Promise.all to
-        issue the complete the processing of the promise/ajax calls
-    */
-
-
-    getAllPrices(coinArray).then((newArray) => {
-
-        returnArray = [...newArray]
-
-        let t = coinArray.length - 1
-        let coin = coinArray[t]
-
-    });
-
-
-
-
-
-
-
-
-
-
-
-
 }
