@@ -207,16 +207,13 @@ $.ajax({
      headline = newsArray[0][z].headline.main
      urlDisplay = newsArray[0][z].web_url
      summary = newsArray[0][z].snippet
+     
 
-
-     var articleList = $("<ul>")
-     articleList.addClass("news-group")
-     titleDisplay = $()
 
     newsSection = $(".newsDivider")
-    newsSection.append("<h4>" + headline + "<h4>")
-    newsSection.append("<p>" + summary + "<p>")
-    newsSection.append("<a href=" + urlDisplay + " " + "target='_blank'" + ">" + "Full Article Here" + "<a>")
+    newsSection.append("<h4>" + headline)
+    newsSection.append("<p>" + summary)
+    newsSection.append("<a href=" + urlDisplay + " " + "target='_blank'" + ">" + "Full Article Here")
  }
 
 }).fail(function(err) {
