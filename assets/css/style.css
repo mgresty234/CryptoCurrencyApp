@@ -193,6 +193,10 @@ article {
     height: 250px;
   }
 
+  .fullArticle {
+      margin-bottom: 15px;
+  }
+
 /* Footer */
 .footer {
     text-align: center;
