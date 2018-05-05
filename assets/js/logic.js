@@ -177,10 +177,6 @@ getAllPrices(coinArray).then((newArray) => {
 // }
 
 
-$(document).ready(function() {
-    getNews()
-});
-
 // gameRef.on("child_added", function(snapshot) {
 //     email = firebase.auth().currentUser.email;
 //     var guess = snapshot.val();
@@ -193,23 +189,17 @@ $(document).ready(function() {
 // })
 
 
+
 // NYT NEWS Call
-function getNews () {
-    var newsURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey="
-    var newsApiKey = "1bb206c04e3145bf95c91c4863b50374"
-    var 
+var url = 'https://newsapi.org/v2/everything?' +
+          'q=cryptocurrency&' +            
+          'pageSize=10&' +
+          'sortBy=popularity&' +
+          'apiKey=1bb206c04e3145bf95c91c4863b50374';
 
-    url2 = 'https://newsapi.org/v2/everything?' +
-            'q=cryptocurrency&' +
-            'pageSize=10&' +
-            'sortBy=popularity&' +
-            'apiKey=1bb206c04e3145bf95c91c4863b50374';
+var req = new Request(url);
 
-    var req = new Request(url2);
-    newsArray = []
-    fetch(req)
-        .then(function(response) {
-           console.log(response.json())
-
-        })
-}
+fetch(req)
+    .then(function(response) {
+        console.log(response.json());
+    })
