@@ -46,10 +46,10 @@
     padding: 5px;
   }
 
-  .navigation {
+  /* .navigation {
     position: sticky;
     top: 0px;
-  }
+  } */
 
   .quote {
     font-size: 1rem;
@@ -124,9 +124,9 @@ h5 {
     border-bottom:1px solid #eff0f1;
 }
 
-.card {
+/* .card {
     z-index: -1;
-}
+} */
 
 .card-body {
     overflow: auto;
@@ -169,6 +169,23 @@ h5 {
     width: 80%;
     height: 80%;
     }
+
+article {
+    margin-left: 170px; 
+    padding: 1em;
+    overflow: hidden;
+    }
+
+.newsDivider {
+    border-left: 1px solid gray;
+    }
+    
+.one {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
 
 /* Footer */
 .footer {

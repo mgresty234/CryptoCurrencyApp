@@ -169,6 +169,7 @@
                 <th scope="col">Market Cap</th>
                 <th scope="col">High Today</th>
                 <th scope="col">Low Today</th>
+                <th scope="col">Chart</th>
               </tr>
             </thead>
             <tbody>
@@ -181,23 +182,33 @@
   </div>
 
   <!-- Crypto Currency News Container - from RSS -->
-  <div class = "container pricing">
+  <div class = "container news">
     <div class="card">
       <div class="card-header">
         <h5>CRYPTO CURRENCY NEWS</h5>
         <div class = "wpm-border"></div>
       </div>
       <div class="card-body">
-        <iframe src="https://feed.mikle.com/widget/v2/77295/" height="452px" width="100%" class="fw-iframe" scrolling="no" frameborder="0"></iframe>
+          <div class="container">
+          <article class = "newsImage one">
+          </article>
+          
+          <article class = "newsDivider">
+            <h3 class = "newsTitle"></h3>
+            <p class = "newsArticle"></p>
+            <p class= "newsLink"></p>
+          </article>
+
+        <!-- <iframe src="https://feed.mikle.com/widget/v2/77295/" height="452px" width="100%" class="fw-iframe" scrolling="no" frameborder="0"></iframe> -->
       </div>
     </div>  
   </div>
-  <!-- <div class="chart-container"></div> -->
 
   <div class = "footer container-fluid">
       &copy; 2018 | Crypto Cronies | Created using HTML, CSS, Bootstrap, JS, JQuery, Firebase
   </div>
-  <canvas id="myChart"></canvas>
+
+  <!-- <canvas id="myChart"></canvas> -->
 
   <script type="text/javascript" src="assets/js/logic.js"></script>
     <!-- <script type="text/javascript" src="assets/js/cryptoapp.js"></script> -->
